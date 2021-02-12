@@ -1,0 +1,43 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.grid_wrapper_index {
+    display: grid;
+    grid-template-rows:125px 300px 500px 100px;
+    grid-template-areas: 
+    "he"
+    "a1"
+    "a2"
+    "fo" ;
+}
+
+header {
+    grid-area: he;
+    position: sticky;
+    top: 0px;
+    height: 125px;
+    width: 100vw;
+    background-color: crimson;
+}
+
+
+
+#article_1_index {
+    grid-area: a1;
+    background-color: blueviolet;
+}
+
+#article_2_index {
+    grid-area: a2;
+    background-color: green;
+}
+
+footer {
+    grid-area: fo;
+    background-color: black;
+}
+
+
