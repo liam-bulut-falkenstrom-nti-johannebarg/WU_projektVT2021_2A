@@ -27,18 +27,63 @@ header {
     "lo na";
 }
 
+
 nav {
     grid-area: na;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position:absolute; 
+    height: 83.5vh;
+    right: 0px;
+    top: -600px;
+    width: 125px;
+    background-color: black;
+    align-items: center;
+    transition: all 1s;
+}
+
+.nav_links li {
+    list-style: none;
+}
+
+.nav_links a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+.nav_active {
+    transform: translateY(700px)
+}
+
+
+
+
+
+/* kanske ha nav i header på samma sätt som Leo 
+lägger naven bredvid headern. Alltså så att det 
+ser likadant ut*/
+
+
 
 .burger {
     height: 100%;
+    width: 125px;
+    cursor:pointer;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    margin-right: 50px;
-
+    align-items: center;
+    transition: all 0.3s;
 }
 
 .burger div {
@@ -47,6 +92,19 @@ nav {
     background-color:white;
     margin: 5px;
     border-radius: 10%;
+    transition: all 0.3s;
+}
+
+.toggle .line_1 {
+    transform: rotate(-45deg) translate(-10px, 11px);
+}
+
+.toggle .line_2 {
+    opacity: 0;
+}
+
+.toggle .line_3 {
+    transform: rotate(45deg) translate(-10px, -11px);
 }
 
 #article_1_index {
@@ -64,4 +122,56 @@ footer {
     background-color: black;
 }
 
+.background_image {
+    grid-area: ba;
+    background-color: turquoise;
+}
 
+
+@media screen and (min-width: 800px) {
+    .burger {
+        display: none;
+    }   
+
+
+    .grid_wrapper_index {
+        display: grid;
+        grid-template-rows:100px 300px 500px 100px;
+        grid-template-columns: 1fr 800px 1fr;
+        grid-template-areas: 
+        "he he he"
+        "ba a1 b1"
+        "ba a2 b1"
+        "fo fo fo" ;
+    }
+    
+
+
+    /* .grid_wrapper_index {
+        grid-template-columns: 1fr 800px 1fr;
+        grid-template-areas:
+        "he he he"
+        "ba a1 ba"
+        "ba a2 ba"
+        "fo fo fo";
+    } */
+
+    .nav_links {
+        position:relative;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        background-color:rgba(0,0,0,0);
+    }
+
+    .nav_links {
+        letter-spacing: 5px;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .nav_active {
+        transform: none;
+    }
+}
