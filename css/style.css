@@ -1,32 +1,28 @@
+/* Allmänt för alla sidor (header) */
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.grid_wrapper_index {
-    display: grid;
-    grid-template-rows:100px 300px 500px 100px;
-    grid-template-areas: 
-    "he"
-    "a1"
-    "a2"
-    "fo" ;
+body {
+    background: url(/img/wb_v6.jpg) no-repeat fixed;
 }
 
 header {
     grid-area: he;
     position: sticky;
+    z-index: 999;
     top: 0px;
     height: 100px;
     width: 100vw;
-    background-color: crimson;
+    background-color: rgb(25, 120, 180);
     display:grid;
     grid-template-columns: 100px 1fr;
     grid-template-areas: 
     "lo na";
 }
-
 
 nav {
     grid-area: na;
@@ -38,13 +34,13 @@ nav {
 .nav_links {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     position:absolute; 
     height: 83.5vh;
     right: 0px;
     top: -600px;
     width: 125px;
-    background-color: black;
+    background-color: rgb(25, 120, 180);
     align-items: center;
     transition: all 1s;
 }
@@ -56,29 +52,19 @@ nav {
 .nav_links a {
     text-decoration: none;
     font-weight: bold;
-    font-size: 25px;
-    color: white;
+    font-size: 20px;
+    color:  rgb(230, 250, 255);
 }
 
 .nav_active {
-    transform: translateY(700px)
+    transform: translateY(700px);
 }
-
-
-
-
-
-/* kanske ha nav i header på samma sätt som Leo 
-lägger naven bredvid headern. Alltså så att det 
-ser likadant ut*/
-
-
 
 .burger {
     height: 100%;
     width: 125px;
     cursor:pointer;
-    background-color: black;
+    background-color:rgb(25, 120, 180);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +75,7 @@ ser likadant ut*/
 .burger div {
     height: 5px;
     width: 45px;
-    background-color:white;
+    background-color: rgb(230, 250, 255);
     margin: 5px;
     border-radius: 10%;
     transition: all 0.3s;
@@ -107,54 +93,386 @@ ser likadant ut*/
     transform: rotate(45deg) translate(-10px, -11px);
 }
 
+footer {
+    grid-area: fo;
+    background-color: rgb(25, 120, 180);
+}
+
+
+
+
+
+
+
+
+/* Index */
+
+.grid_wrapper_index {
+    display: grid;
+    grid-template-rows:100px 1fr 200px;
+    grid-template-areas: 
+    "he"
+    "ma"
+    "fo";
+}
+
+#main_index {
+    grid-area: ma;
+    background-color: rgb(250, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 300px;
+    grid-template-areas: 
+    "a1"
+    "a2"
+    "as";
+}
+
 #article_1_index {
     grid-area: a1;
-    background-color: blueviolet;
+    background-color: rgb(243, 247, 247);
+    border-bottom: 4px solid rgb(25, 120, 180);
+    width: 85%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
 }
+
+#article_1_index img {
+    width: 100%;
+    height: auto;
+}
+
+#article_1_index h1 {
+    margin: 30px 0px 30px 0px;
+    font-size: 30px;
+}
+
 
 #article_2_index {
     grid-area: a2;
-    background-color: green;
+    background-color:  rgb(243, 247, 247);
+    justify-self: center;
+    width: 85%;
+    margin: 50px 0px 50px 0px;
+    padding: 40px 10% 40px 10%;
+    border-top: 4px solid rgb(25, 120, 180);
+    border-bottom: 4px solid rgb(25, 120, 180);
 }
 
-footer {
-    grid-area: fo;
-    background-color: black;
+#aside_index {
+    grid-area: as;
+    background-color: rgb(25, 120, 180);
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.background_image {
-    grid-area: ba;
-    background-color: turquoise;
+.sponsor_link {
+    width:250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sponsor_link img {
+    width: 100%
 }
 
 
-@media screen and (min-width: 800px) {
+
+
+
+
+
+/* Kontakt */ 
+
+.grid_wrapper_kontakt {
+    display: grid;
+    grid-template-rows:100px 800px 200px;
+    grid-template-areas: 
+    "he"
+    "ma"
+    "fo" ;
+}
+
+#main_kontakt {
+    display: grid;
+    grid-template-rows: 500px 300px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "se"
+    "ar"
+    ;
+}
+
+#article_kontakt {
+    grid-area: ar;
+    background-color:gray ;
+}
+
+#section_kontakt {
+    grid-area: se;
+    background-color:white ;
+}
+
+
+
+
+
+/* Traningar */
+
+.grid_wrapper_traningar {
+    display: grid;
+    grid-template-rows:100px 1200px 200px;
+    grid-template-areas: 
+    "he"
+    "ma"
+    "fo" ;
+}
+
+#main_traningar {
+    display: grid;
+    grid-template-rows: 500px 700px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "s2"
+    "s1"
+    ;
+}
+
+#section_2_traningar {
+    grid-area: s2;
+    background: white;
+}
+
+#section_1_traningar {
+    grid-area: s1;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "a1 a2"
+    ;
+}
+
+#article_1_traningar {
+    grid-area: a1;
+    background-color: white;
+}
+
+#article_2_traningar {
+    grid-area: a2;
+    background-color: gray;
+}
+
+
+
+
+/* Lag */
+
+.grid_wrapper_lag {
+    display: grid;
+    grid-template-rows:100px 900px 200px;
+    grid-template-areas: 
+    "he"
+    "ma"
+    "fo" ;
+}
+
+#main_lag {
+    /* background-color: rgb(250, 255, 255); */
+    background-color: gray;
+    grid-area: ma;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "se";
+}
+
+#section_lag {
+    grid-area: se;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#section_lag article {
+    background-color: white;
+    width: 150px;
+    height: 225px;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+}
+
+.banner_lag {
+    width: 100%;
+    height: 45px;
+    align-self: flex-end;
+    background-color:rgb(25, 120, 180);
+    color: rgb(250, 255, 255);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* Borja spela */
+
+.grid_wrapper_spela {
+    display: grid;
+    grid-template-rows:100px 1fr 200px;
+    grid-template-areas: 
+    "he"
+    "ma"
+    "fo" ;
+}
+
+#main_spela {
+    background-color: rgb(250, 255, 255);
+    grid-area: ma;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-areas: 
+    "s1"
+    "s2"
+    "s3";
+}
+
+#section_1_spela {
+    grid-area: s1;
+    background-color: white;
+}
+
+#section_2_spela {
+    grid-area: s2;
+    background-color: lightgray;
+    border-top: 4px solid rgb(25, 120, 180);
+    border-bottom: 4px solid rgb(25, 120, 180);
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "a1"
+    "a2"
+    "a3";
+}
+
+#article_1_spela {
+    grid-area: a1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#article_2_spela {
+    grid-area: a2;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#article_3_spela {
+    grid-area: a3;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.länk_ikon_spela {
+    background-color: rgb(25, 120, 180);
+    height: 65px;
+    width: 85%;
+    margin-top: 40px;
+    border-radius: 35px;
+    text-decoration: none;
+    color: rgb(243, 247, 247);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "tex arr";
+}
+
+.länk_ikon_spela h1 {
+    grid-area: tex;
+    margin-top:10px;
+    margin-left: 15%;
+}
+
+.länk_ikon_spela p {
+    grid-area: tex;
+    margin-top:30px;
+    margin-left: 15%;
+}
+
+.link_arrow_1 {
+    grid-area: arr;
+    background-color: rgb(243, 247, 247);
+    justify-self: flex-end;
+    margin-right: 30px;
+    width: 5px;
+    height: 25px;
+    transform: rotate(-45deg) translate(-9px, 9px);
+}
+
+.link_arrow_2 {
+    grid-area: arr; 
+    background-color: rgb(243, 247, 247);
+    justify-self: flex-end;
+    width: 5px;
+    height: 25px;
+    margin-right: 30px;
+    width: 5px;
+    height: 25px;
+    transform: rotate(45deg) translate(19px, 19px);   
+}
+
+.brodtext_beskrivning {
+    width: 80%;
+    margin-top: 10px;
+}
+
+
+#section_3_spela {
+    grid-area: s3;
+    background-color: white;
+}
+
+#section_3_spela h1 {  
+    padding-top: 20px;
+    margin-left: 30px; 
+}
+
+#section_3_spela p {  
+    padding: 10px 0px 30px 0px;
+    margin: 0px 30px 0px 30px;
+}
+
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    
+    /* Allmänt för alla sidor (header) */
+    
     .burger {
         display: none;
     }   
 
-
-    .grid_wrapper_index {
-        display: grid;
-        grid-template-rows:100px 300px 500px 100px;
-        grid-template-columns: 1fr 800px 1fr;
-        grid-template-areas: 
-        "he he he"
-        "ba a1 b1"
-        "ba a2 b1"
-        "fo fo fo" ;
+    header {
+        width: 1000px;
+        justify-self: center;
+        position: relative;
     }
-    
-
-
-    /* .grid_wrapper_index {
-        grid-template-columns: 1fr 800px 1fr;
-        grid-template-areas:
-        "he he he"
-        "ba a1 ba"
-        "ba a2 ba"
-        "fo fo fo";
-    } */
 
     .nav_links {
         position:relative;
@@ -174,4 +492,169 @@ footer {
     .nav_active {
         transform: none;
     }
+
+    footer {
+        justify-self: center;
+        width: 1000px;
+        margin-bottom: 50px;
+    }
+
+
+
+
+
+    /* Index */
+
+    .grid_wrapper_index {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr 250px;
+        grid-template-areas: 
+        "he"
+        "ma"
+        "fo" ;
+    }
+    
+    #main_index {
+        justify-self: center;
+        width: 1000px;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 500px 1fr;
+        grid-template-areas: 
+        "as a1 "
+        "a2 a2"
+        ;
+    }
+
+    #article_1_index h1 {
+        font-size: 40px;
+        margin-top: 45px;
+    }
+    
+    #aside_index {
+        grid-area: as;
+        flex-direction: column;
+        justify-content: flex-start;
+
+    }
+    
+    .sponsor_link {
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .sponsor_link img {
+        margin: 0px 5px 0px 5px;
+    }
+
+
+    /* Kontakt */
+
+    .grid_wrapper_kontakt {
+        grid-template-rows:100px 500px 200px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "he"
+        "ma"
+        "fo" ;
+    }
+
+    #main_kontakt {
+        justify-self: center;
+        width: 1000px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 500px;
+        grid-template-areas: 
+        "ar se";
+    }
+
+
+
+
+    /* Traningar */
+
+    .grid_wrapper_traningar {
+        grid-template-rows: 100px 700px 250px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "he"
+        "ma"
+        "fo" ;
+    }
+
+    #main_traningar {
+        justify-self: center;
+        width: 1000px;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "s1 s2";
+    }
+
+    #section_1_traningar {
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 300px;
+        grid-template-areas: 
+        "a1"
+        "a2";
+    }
+
+
+    /* Lag */
+
+    .grid_wrapper_lag {
+        grid-template-rows:100px 800px 200px;
+    }
+
+    #section_lag {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-self: center;
+        align-self: center;
+        height: 700px;
+        width: 900px;
+    }
+
+    #main_lag {
+        justify-self: center;
+        width: 1000px;
+    }
+
+
+    #section_lag article {
+        width: 200px;
+        height: 250px;
+    }
+
+
+
+    /* Borja spela */
+
+    #main_spela {
+        justify-self: center;
+        width: 1000px;
+    }
+
+    #section_2_spela {
+        justify-self: center;
+        width:950px;
+    }
+
+    #section_2_spela article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "bes iko";
+    }
+
+    .länk_ikon_spela {
+        grid-area: iko;
+    }
+
+    .brodtext_beskrivning {
+        grid-area: bes;
+        margin: 40px 0px 0px 40px;
+    }
+    
+
 }
