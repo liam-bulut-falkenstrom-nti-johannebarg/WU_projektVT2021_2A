@@ -1,13 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 /* Allmänt för alla sidor (header) */
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
 }
 
-body {
-    background: url(/img/wb_v6.jpg) no-repeat fixed;
+h1 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+h3 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 header {
@@ -19,9 +45,16 @@ header {
     width: 100vw;
     background-color: rgb(25, 120, 180);
     display:grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 150px 1fr;
     grid-template-areas: 
     "lo na";
+}
+
+header img {
+    grid-area: lo;
+    height: 90px;
+    justify-self: center;
+    align-self: center;
 }
 
 nav {
@@ -35,8 +68,9 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding-bottom: 10%;
     position:absolute; 
-    height: 83.5vh;
+    height: 85vh;
     right: 0px;
     top: -600px;
     width: 125px;
@@ -51,9 +85,15 @@ nav {
 
 .nav_links a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    color:  rgb(230, 250, 255);
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 25px;
+    color:  white;
+}
+
+.nav_links a:hover {
+    text-decoration: underline;
 }
 
 .nav_active {
@@ -75,7 +115,7 @@ nav {
 .burger div {
     height: 5px;
     width: 45px;
-    background-color: rgb(230, 250, 255);
+    background-color: white;
     margin: 5px;
     border-radius: 10%;
     transition: all 0.3s;
@@ -96,6 +136,47 @@ nav {
 footer {
     grid-area: fo;
     background-color: rgb(25, 120, 180);
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 50vw 50vw;
+    grid-template-areas: 
+    "s1 s3"
+    "s2 s2";
+}
+
+.section_1_footer {
+    grid-area: s1;
+    margin: 20px 0px 0px 20px;
+}
+
+footer h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+footer p {
+    color:white;
+    margin-bottom: 2px;
+}
+
+.section_2_footer {
+    grid-area: s2;
+    margin-left: 20px;
+}
+
+.section_2_footer a {
+    color:white;
+}
+
+.section_3_footer {
+    grid-area: s3;
+}
+
+.section_3_footer img {
+    height: 125px;
+    margin: 100px 0px 0px 30px;
 }
 
 
@@ -109,7 +190,7 @@ footer {
 
 .grid_wrapper_index {
     display: grid;
-    grid-template-rows:100px 1fr 200px;
+    grid-template-rows:100px 1fr 400px;
     grid-template-areas: 
     "he"
     "ma"
@@ -118,10 +199,9 @@ footer {
 
 #main_index {
     grid-area: ma;
-    background-color: rgb(250, 255, 255);
+    background-color: white;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr 300px;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
     grid-template-areas: 
     "a1"
     "a2"
@@ -132,8 +212,6 @@ footer {
     grid-area: a1;
     background-color: rgb(243, 247, 247);
     border-bottom: 4px solid rgb(25, 120, 180);
-    width: 85%;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -146,8 +224,8 @@ footer {
 }
 
 #article_1_index h1 {
-    margin: 30px 0px 30px 0px;
-    font-size: 30px;
+    margin: 50px 0px 50px 0px ;
+    font-size: 25px;
 }
 
 
@@ -155,7 +233,6 @@ footer {
     grid-area: a2;
     background-color:  rgb(243, 247, 247);
     justify-self: center;
-    width: 85%;
     margin: 50px 0px 50px 0px;
     padding: 40px 10% 40px 10%;
     border-top: 4px solid rgb(25, 120, 180);
@@ -164,22 +241,16 @@ footer {
 
 #aside_index {
     grid-area: as;
-    background-color: rgb(25, 120, 180);
+    background-color: rgb(17, 79, 117);
     display:flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.sponsor_link {
-    width:250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .sponsor_link img {
-    width: 100%
+    width: 260px;
+    margin: 5px 0px 5px 0px;
 }
 
 
@@ -192,7 +263,7 @@ footer {
 
 .grid_wrapper_kontakt {
     display: grid;
-    grid-template-rows:100px 800px 200px;
+    grid-template-rows:100px 1fr 400px;
     grid-template-areas: 
     "he"
     "ma"
@@ -200,9 +271,11 @@ footer {
 }
 
 #main_kontakt {
+    grid-area: ma;
+    background-color: white;
     display: grid;
-    grid-template-rows: 500px 300px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100vw;
+    grid-template-rows: 0.5fr 1fr;
     grid-template-areas:
     "se"
     "ar"
@@ -211,15 +284,34 @@ footer {
 
 #article_kontakt {
     grid-area: ar;
-    background-color:gray ;
+    background-color:lightgray;
+    padding: 30px 0px 30px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#article_kontakt img {
+    width: 100%;
+    height: auto;
 }
 
 #section_kontakt {
     grid-area: se;
-    background-color:white ;
+    background-color:rgb(243, 247, 247);
+    border-top: 4px solid rgb(25, 120, 180);
+    border-bottom: 4px solid rgb(25, 120, 180);
+    margin: 30px 0px 30px 0px;
+    padding: 30px 0px 40px 0px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-
+#section_kontakt p{
+    margin-bottom: 10px;
+}
 
 
 
@@ -227,7 +319,7 @@ footer {
 
 .grid_wrapper_traningar {
     display: grid;
-    grid-template-rows:100px 1200px 200px;
+    grid-template-rows:100px 1fr 400px;
     grid-template-areas: 
     "he"
     "ma"
@@ -235,9 +327,10 @@ footer {
 }
 
 #main_traningar {
+    grid-area: ma;
+    background-color: white;
     display: grid;
-    grid-template-rows: 500px 700px;
-    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 0.5fr;
     grid-template-areas:
     "s2"
     "s1"
@@ -246,27 +339,89 @@ footer {
 
 #section_2_traningar {
     grid-area: s2;
-    background: white;
+    width: 100vw;
 }
+
+#section_2_traningar img {
+    width: 100%;
+}
+
+#article_3_traningar {
+    background-color: rgb(243, 247, 247);
+    padding: 40px 45px 80px 40px;
+    margin: 20px 0px 20px 0px;
+    border-top: 4px solid rgb(25, 120, 180);
+    border-bottom: 4px solid rgb(25, 120, 180);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#article_3_traningar p {
+    margin-bottom: 5px;
+}
+
+#article_3_traningar h3 {
+    margin-top: 10px;
+}
+
 
 #section_1_traningar {
     grid-area: s1;
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 45vw 55vw;
     grid-template-areas: 
     "a1 a2"
     ;
 }
 
+#section_1_traningar article {
+    background-color: rgb(243, 247, 247);
+    border-top: 4px solid rgb(25, 120, 180);
+    border-bottom: 4px solid rgb(25, 120, 180);
+    margin-bottom: 20px;
+    padding: 30px 0px 60px 0px;
+}
+
 #article_1_traningar {
     grid-area: a1;
-    background-color: white;
 }
+
+#article_1_traningar h2 {
+    margin-left: 40px;
+}
+
+#article_1_traningar h3 {
+    margin: 20px 60px 0px 45px;
+}
+
+#article_1_traningar p {
+    margin: 3px 60px 0px 45px;
+}
+
+
 
 #article_2_traningar {
     grid-area: a2;
-    background-color: gray;
 }
+
+#article_2_traningar h2 {
+    margin-bottom: 25px;
+}
+
+#article_2_traningar p {
+    margin-top: 10px;
+}
+
+.webpage_link {
+    color:black;
+    text-decoration: none;
+}
+
+
+
+
 
 
 
@@ -275,7 +430,7 @@ footer {
 
 .grid_wrapper_lag {
     display: grid;
-    grid-template-rows:100px 900px 200px;
+    grid-template-rows:100px 800px 400px;
     grid-template-areas: 
     "he"
     "ma"
@@ -283,42 +438,53 @@ footer {
 }
 
 #main_lag {
-    /* background-color: rgb(250, 255, 255); */
-    background-color: gray;
+    background-color: rgb(243, 247, 247);
     grid-area: ma;
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-areas: 
-    "se";
+    "tje kil";
 }
 
-#section_lag {
-    grid-area: se;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-
-#section_lag article {
-    background-color: white;
-    width: 150px;
-    height: 225px;
-    justify-self: center;
-    align-self: center;
+#main_lag section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#section_tjejer {
+    grid-area: tje;
+}
+
+#section_killar {
+    grid-area: kil;
+}
+
+#main_lag section article {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#main_lag section article img {
+    width:150px;
+    height:150px;
 }
 
 .banner_lag {
-    width: 100%;
-    height: 45px;
-    align-self: flex-end;
+    height: 50px;
     background-color:rgb(25, 120, 180);
-    color: rgb(250, 255, 255);
     display:flex;
     justify-content: center;
     align-items: center;
 }
 
+.banner_lag a {
+    color: rgb(243, 247, 247);
+    font-size: 15px;
+    letter-spacing: 1px;
+}
 
 
 
@@ -326,7 +492,7 @@ footer {
 
 .grid_wrapper_spela {
     display: grid;
-    grid-template-rows:100px 1fr 200px;
+    grid-template-rows:100px 1fr 400px;
     grid-template-areas: 
     "he"
     "ma"
@@ -334,11 +500,11 @@ footer {
 }
 
 #main_spela {
-    background-color: rgb(250, 255, 255);
+    background-color: white;
     grid-area: ma;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 0.1fr 1fr 0.5fr;
     grid-template-areas: 
     "s1"
     "s2"
@@ -347,7 +513,13 @@ footer {
 
 #section_1_spela {
     grid-area: s1;
-    background-color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section_1_spela img {
+    width: 100%;
 }
 
 #section_2_spela {
@@ -364,28 +536,25 @@ footer {
     "a3";
 }
 
-#article_1_spela {
-    grid-area: a1;
+#section_2_spela article {
     display:flex;
     flex-direction: column;
     align-items: center;
+}
+
+#article_1_spela {
+    grid-area: a1;
 }
 
 #article_2_spela {
     grid-area: a2;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #article_3_spela {
     grid-area: a3;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.länk_ikon_spela {
+.link_ikon_spela {
     background-color: rgb(25, 120, 180);
     height: 65px;
     width: 85%;
@@ -394,19 +563,22 @@ footer {
     text-decoration: none;
     color: rgb(243, 247, 247);
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas: 
     "tex arr";
 }
 
-.länk_ikon_spela h1 {
+.link_ikon_spela h2 {
     grid-area: tex;
-    margin-top:10px;
+    margin-top:9px;
     margin-left: 15%;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 20px;
 }
 
-.länk_ikon_spela p {
+.link_ikon_spela p {
     grid-area: tex;
     margin-top:30px;
     margin-left: 15%;
@@ -429,8 +601,6 @@ footer {
     width: 5px;
     height: 25px;
     margin-right: 30px;
-    width: 5px;
-    height: 25px;
     transform: rotate(45deg) translate(19px, 19px);   
 }
 
@@ -445,14 +615,14 @@ footer {
     background-color: white;
 }
 
-#section_3_spela h1 {  
-    padding-top: 20px;
+#section_3_spela h2 {  
+    margin-top: 20px;
     margin-left: 30px; 
 }
 
 #section_3_spela p {  
-    padding: 10px 0px 30px 0px;
-    margin: 0px 30px 0px 30px;
+    padding: 0px 0px 30px 0px;
+    margin: 0px 40px 40px 30px;
 }
 
 
@@ -462,7 +632,7 @@ footer {
 
 @media screen and (min-width: 1000px) {
     
-    /* Allmänt för alla sidor (header) */
+    /* Allmänt för alla sidor  */
     
     .burger {
         display: none;
@@ -474,6 +644,10 @@ footer {
         position: relative;
     }
 
+    body {
+        background: url(/img/hemsida_bakgrund.jpg) no-repeat fixed;
+    }
+
     .nav_links {
         position:relative;
         top: 0px;
@@ -481,12 +655,13 @@ footer {
         height: 100%;
         flex-direction: row;
         background-color:rgba(0,0,0,0);
+        text-transform: uppercase;
+        padding-bottom: 0px;
     }
 
-    .nav_links {
-        letter-spacing: 5px;
-        font-size: 30px;
-        text-transform: uppercase;
+    .nav_links a {
+        font-size: 35px;
+        letter-spacing: 1px;
     }
 
     .nav_active {
@@ -497,33 +672,53 @@ footer {
         justify-self: center;
         width: 1000px;
         margin-bottom: 50px;
+        grid-area: fo;
+        background-color: rgb(25, 120, 180);
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "s1 s2 s3";
+    }
+    
+    .section_1_footer {
+        margin: 10px 0px 0px 50px;
     }
 
+    .section_2_footer {
+        margin: 10px 0px 0px 0px;
+    }
 
+    footer p {
+        margin-top:0px;
+    }
+
+    .section_3_footer img {
+        height: 150px;
+        margin: 40px 0px 0px 50px;
+    }
 
 
 
     /* Index */
 
     .grid_wrapper_index {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px 1fr 250px;
-        grid-template-areas: 
-        "he"
-        "ma"
-        "fo" ;
+        grid-template-rows: 100px 1fr 300px;
     }
     
     #main_index {
         justify-self: center;
         width: 1000px;
         grid-template-columns: 1fr 2fr;
-        grid-template-rows: 500px 1fr;
+        grid-template-rows: 500px 500px;
         grid-template-areas: 
         "as a1 "
         "a2 a2"
         ;
+    }
+
+    #article_1_index {
+        width: 85%;
+        margin-top: 20px;
     }
 
     #article_1_index h1 {
@@ -531,32 +726,29 @@ footer {
         margin-top: 45px;
     }
     
+    #article_2_index {
+        width: 85%;
+    }
+
     #aside_index {
-        grid-area: as;
         flex-direction: column;
         justify-content: flex-start;
-
     }
     
     .sponsor_link {
-        width:100%;
-        margin-bottom:10px;
+        display: flex;
+        align-items: flex-end;     
     }
 
     .sponsor_link img {
-        margin: 0px 5px 0px 5px;
+        width: 320px;
     }
 
 
     /* Kontakt */
 
     .grid_wrapper_kontakt {
-        grid-template-rows:100px 500px 200px;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "he"
-        "ma"
-        "fo" ;
+        grid-template-rows:100px 1fr 300px;
     }
 
     #main_kontakt {
@@ -568,18 +760,19 @@ footer {
         "ar se";
     }
 
+    #section_kontakt {
+        margin: 30px 50px 30px 50px;
+    }
 
-
+    #article_kontakt img {
+        height: 400px;
+        width: auto;
+    }
 
     /* Traningar */
 
     .grid_wrapper_traningar {
-        grid-template-rows: 100px 700px 250px;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "he"
-        "ma"
-        "fo" ;
+        grid-template-rows: 100px 1fr 300px;
     }
 
     #main_traningar {
@@ -592,47 +785,85 @@ footer {
     }
 
     #section_1_traningar {
+        grid-template-rows: 1fr 400px;
         grid-template-columns: 1fr;
-        grid-template-rows: 400px 300px;
         grid-template-areas: 
         "a1"
         "a2";
     }
 
+    #article_1_traningar {
+        margin: 20px 0px 0px 30px;
+    }
+
+    #article_2_traningar {
+        margin: 0px 0px 20px 30px;
+    }
+
+    #section_2_traningar {
+        margin-top: 20px;
+        justify-self: center;
+        width: 85%;
+    }
+
+    #article_2_traningar h2 {
+        margin: 0px 50px 20px 40px;
+    }
+    
+    #article_2_traningar p {
+        margin: 0px 0px 10px 40px;
+    }
+    
+    #article_3_traningar {
+        padding: 40px 50px 80px 50px;
+    }
 
     /* Lag */
 
     .grid_wrapper_lag {
-        grid-template-rows:100px 800px 200px;
-    }
-
-    #section_lag {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        justify-self: center;
-        align-self: center;
-        height: 700px;
-        width: 900px;
+        grid-template-rows:100px 600px 300px;
     }
 
     #main_lag {
         justify-self: center;
         width: 1000px;
+        grid-template-rows: 300px 300px;
+        grid-template-areas: 
+        "tje"
+        "kil";
     }
 
+    #main_lag section {
+        flex-direction: row;
+    }
 
-    #section_lag article {
+    #main_lag section article {
         width: 200px;
         height: 250px;
+    }
+
+    #main_lag section article img {
+        height: 200px;
+        width: 200px;
     }
 
 
 
     /* Borja spela */
 
+    .grid_wrapper_spela {
+        grid-template-rows:100px 1fr 300px;
+    }
+
     #main_spela {
         justify-self: center;
         width: 1000px;
+    }
+
+    #section_1_spela {
+        justify-self: center;
+        width: 950px;
+        margin: 20px 0px 20px 0px;
     }
 
     #section_2_spela {
@@ -647,7 +878,7 @@ footer {
         "bes iko";
     }
 
-    .länk_ikon_spela {
+    .link_ikon_spela {
         grid-area: iko;
     }
 
