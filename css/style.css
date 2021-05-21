@@ -39,7 +39,7 @@ a:hover {
 header {
     grid-area: he;
     position: sticky;
-    z-index: 999;
+    /* z-index: 999; (Tagit bort)*/
     top: 0px;
     height: 100px;
     width: 100vw;
@@ -72,7 +72,7 @@ nav {
     position:absolute; 
     height: 85vh;
     right: 0px;
-    top: -600px;
+    top: -700px; /*Nytt*/
     width: 125px;
     background-color: rgb(25, 120, 180);
     align-items: center;
@@ -97,7 +97,7 @@ nav {
 }
 
 .nav_active {
-    transform: translateY(700px);
+    transform: translateY(800px); /*Nytt*/
 }
 
 .burger {
@@ -119,6 +119,7 @@ nav {
     margin: 5px;
     border-radius: 10%;
     transition: all 0.3s;
+    z-index: 1; /*Nytt*/
 }
 
 .toggle .line_1 {
